@@ -1,0 +1,39 @@
+.container-right {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.container-right-nav {
+  position: sticky;
+  top: 3rem;
+  padding: 0.5rem;
+  background: #2d2d2d;
+  border-radius: 8px;
+}
+
+.container-right-nav ul {
+  list-style: none;
+  padding-left: 0.5rem;
+  margin: 0;
+}
+
+.container-right-nav li {
+  margin: 8px 0;
+  transition: padding-left 0.2s ease;
+}
+
+.container-right-nav a {
+  color: #b0b0b0;
+  display: block;
+  margin: 0.25rem 0;
+  padding: 0.25rem 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.container-right-nav a:hover {
+  color: var(--color-minor);
+  opacity: 0.8;
+  transform: translateX(5px);
+}

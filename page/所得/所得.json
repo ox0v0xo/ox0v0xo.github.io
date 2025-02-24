@@ -1,0 +1,14 @@
+[
+  {
+    "name": "GitHub Page",
+    "description": "我的博客源码",
+    "url": "https://github.com/ox0v0xo/ox0v0xo.github.io",
+    "tags": ["html", "css", "js"]
+  },
+  {
+    "name": "PyckTrim",
+    "description": "Detection of Unnecessary Third-Party Packages in Python Executable Files.",
+    "url": "https://github.com/ox0v0xo/PyckTrim",
+    "tags": ["python"]
+  }
+]
