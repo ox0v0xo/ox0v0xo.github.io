@@ -1,14 +1,26 @@
 [
   {
+    "name": "GitHub Profile",
+    "description": "GitHub Profile",
+    "url": "https://github.com/ox0v0xo/ox0v0xo",
+    "tags": ["introduction"]
+  },
+  {
     "name": "GitHub Page",
-    "description": "我的博客源码",
+    "description": "GitHub Page",
     "url": "https://github.com/ox0v0xo/ox0v0xo.github.io",
     "tags": ["html", "css", "js"]
   },
   {
-    "name": "PyckTrim",
-    "description": "Detection of Unnecessary Third-Party Packages in Python Executable Files.",
-    "url": "https://github.com/ox0v0xo/PyckTrim",
-    "tags": ["python"]
+    "name": "JINX",
+    "description": "My NixOS Configuration",
+    "url": "https://github.com/ox0v0xo/JINX",
+    "tags": ["nix"]
+  },
+  {
+    "name": "Hackclaw",
+    "description": "My Hcak Notes",
+    "url": "https://github.com/ox0v0xo/Hackclaw",
+    "tags": ["penetration", "hack"]
   }
 ]
