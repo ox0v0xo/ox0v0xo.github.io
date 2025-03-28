@@ -1,14 +1,8 @@
 [
   {
-    "name": "VMware Workstation",
-    "path": "./blog/VMware Workstation.md",
+    "name": "XXX",
+    "path": "./blog/XXX.md",
     "date": "XXXX/XX/XX",
-    "tags": ["MISC"]
-  },
-  {
-    "name": "SQL 注入",
-    "path": "./blog/SQL 注入.md",
-    "date": "2025/XX/XX",
-    "tags": ["SQL", "HACK"]
+    "tags": ["XXX"]
   }
 ]

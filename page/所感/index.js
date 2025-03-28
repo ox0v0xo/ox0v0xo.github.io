@@ -74,88 +74,52 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       mainContainer.appendChild(cardList);
-
-      // 检查 URL
-      checkURL();
     })
     .catch((error) => {
       console.error("加载项目数据失败：", error);
     });
 
-  // 监听 URL 的变化
-  window.addEventListener("hashchange", checkURL);
-  window.addEventListener("popstate", checkURL);
-
-  function checkURL() {
-    const hash = window.location.hash.substring(1);
-    const path = window.location.pathname;
-
-    // 如果 URL 是卡片目录
-    if (path === "/page/所感/index.html" && (!hash || hash === "")) {
-      mainContainer.innerHTML = "";
-      mainContainer.appendChild(cardList);
-      navContainer.innerHTML = "";
-      return;
-    }
-
-    // 如果 URL 包含文章标题
-    if (hash) {
-      const decodedHash = decodeURIComponent(hash);
-      const project = window.projects.find((p) => p.name === decodedHash);
-
-      if (project) {
-        loadBlog(project.path, project.name);
-      } else {
-        history.replaceState({}, "", "/page/所感/index.html");
-        mainContainer.innerHTML = "";
-        mainContainer.appendChild(cardList);
-        navContainer.innerHTML = "";
-      }
-    }
-  }
-
   async function loadBlog(path, title) {
-    const response = await fetch(path);
-    const markdown = await response.text();
-    const content = marked.parse(markdown); // 将 Markdown 转换为 HTML
+    try {
+      const mainContainer = document.querySelector(".container-main"); // 根据HTML结构调整
+      const navContainer = document.querySelector(".container-right-nav");
 
-    history.pushState({}, "", `#${encodeURIComponent(title)}`);
+      const response = await fetch(path);
+      if (!response.ok) throw new Error(`HTTP错误! 状态码: ${response.status}`);
+      const markdownText = await response.text();
 
-    // 将文章内容加载到 .container-main 中
-    const mainContainer = document.querySelector(".container-main");
-    mainContainer.innerHTML = content;
+      const content = markdown.parse(markdownText);
 
-    // 动态生成目录
-    const navContainer = document.querySelector(".container-right-nav");
-    navContainer.innerHTML = ""; // 清空旧的目录
-    const headings = mainContainer.querySelectorAll("h1, h2, h3, h4, h5, h6");
-    const navList = document.createElement("ul");
+      // 更新主内容
+      mainContainer.innerHTML = `<div class="markdown">${content}</div>`;
 
-    headings.forEach((heading, index) => {
-      const navItem = document.createElement("li");
-      const navItemLink = document.createElement("a");
-      navItemLink.href = "javascript:void(0);";
-      navItemLink.textContent = heading.textContent;
+      // 生成目录
+      navContainer.innerHTML = "";
+      const headings = mainContainer.querySelectorAll("h1, h2, h3");
+      const navList = document.createElement("ul");
 
-      if (!heading.id) {
-        heading.id = "heading-" + index;
-      }
-
-      navItemLink.addEventListener("click", function () {
-        const targetElement = document.getElementById(heading.id);
-        if (targetElement) {
-          targetElement.scrollIntoView({ behavior: "smooth" });
-        }
+      headings.forEach((heading, index) => {
+        heading.id = heading.id || `heading-${Date.now()}-${index}`;
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = `#${heading.id}`;
+        a.textContent = heading.textContent;
+        a.onclick = (e) => {
+          e.preventDefault();
+          heading.scrollIntoView({ behavior: "smooth" });
+        };
+        li.appendChild(a);
+        navList.appendChild(li);
       });
-      navItem.appendChild(navItemLink);
 
-      const level = parseInt(heading.tagName.substring(1));
-      const indent = (level - 1) * 20;
-      navItem.style.paddingLeft = `${indent}px`;
-
-      navList.appendChild(navItem);
-    });
-
-    navContainer.appendChild(navList);
+      navContainer.appendChild(navList);
+    } catch (error) {
+      console.error("加载失败:", error);
+      document.querySelector(".container-main").innerHTML = `
+          <div class="error" style="color: red; padding: 20px;">
+            Failed to load: ${error.message}
+          </div>
+        `;
+    }
   }
 });
