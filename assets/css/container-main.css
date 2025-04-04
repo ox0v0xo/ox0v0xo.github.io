@@ -1,0 +1,7 @@
+.container-main {
+  flex: 10;
+  padding: 0 20px;
+  height: 100vh; /* 高度为视口高度 */
+  overflow-y: auto; /* 内容超出时出现垂直滚动条 */
+  /* min-width: 400px; */
+}

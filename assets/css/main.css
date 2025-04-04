@@ -1,0 +1,85 @@
+@import url(./container-left.css);
+@import url(./container-main.css);
+@import url(./container-right.css);
+
+:root {
+  --color-main: #e09685;
+  --color-minor: #85cfe0;
+  --color-gray: #aaaaaa;
+
+  /* 夜间模式 */
+  --color-night-bg: #181818;
+  --color-night-bg-vice: rgba(45, 45, 45, 0.8);
+  --color-night-text: #f0f0f0;
+
+  /* 日间模式 */
+  --color-day-bg: #eaeaea;
+  --color-day-text: #333333;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+html {
+  background-color: var(--color-night-bg);
+  color: var(--color-night-text);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--color-main);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+a:hover {
+  color: var(--color-minor);
+}
+a.active {
+  color: var(--color-minor);
+}
+
+.container {
+  align-items: stretch; /* 垂直方向：子元素拉伸填满容器高度 */
+  display: flex; /* 启用 Flex 布局 */
+  height: 100%; /* 容器高度撑满父级 */
+  justify-content: space-between; /* 水平方向：两端对齐，子元素间距平均分配 */
+}
+
+/* 滚轮样式 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* 滚轮轨道 */
+::-webkit-scrollbar-track {
+  background: var(--color-night-bg-vice);
+  border-radius: 10px;
+}
+
+/* 滚轮滑块 */
+::-webkit-scrollbar-thumb {
+  background: var(--color-main);
+  border-radius: 10px;
+  transition: background 0.5s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-minor);
+}
+
+/* 响应式布局 */
+@media screen and (max-width: 900px) {
+  .container-right {
+    display: none;
+  }
+}
