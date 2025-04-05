@@ -1,6 +1,8 @@
 .container-right {
   flex: 3;
-  min-width: 200px;
+  min-width: 250px;
+  overflow-y: overlay;
+  overflow-y: auto;
 }
 
 .container-right-nav {
@@ -11,6 +13,14 @@
   color: var(--color-gray);
 }
 
-.container-right-nav a:hover {
-  color: var(--color-minor);
+.container-right-nav ul {
+  list-style: none;
+  padding-left: 0.5rem;
+  margin: 0;
+}
+
+.container-right-nav li {
+  margin: 20px 0;
+  transition: padding-left 0.2s ease;
+  font-size: 0.9rem;
 }

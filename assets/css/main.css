@@ -58,7 +58,7 @@ a.active {
 
 /* 滚轮样式 */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 /* 滚轮轨道 */
