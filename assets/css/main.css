@@ -1,6 +1,7 @@
 @import url(./container-left.css);
 @import url(./container-main.css);
 @import url(./container-right.css);
+@import url(./card.css);
 
 :root {
   --color-main: #e09685;
@@ -78,8 +79,33 @@ a.active {
 }
 
 /* 响应式布局 */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
   .container-right {
     display: none;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    flex-direction: column; /* 改为纵向排列 */
+    height: auto; /* 高度自适应内容 */
+    overflow-y: auto; /* 整体容器可滚动 */
+  }
+
+  .container-left {
+    height: auto; /* 自适应内容高度 */
+    min-height: initial; /* 移除最小高度限制 */
+    overflow-y: visible; /* 禁用左栏的滚动条 */
+  }
+
+  .container-left-avatar {
+    width: 80px;
+    margin: 10px;
+  }
+
+  .container-main {
+    height: auto; /* 自适应内容高度 */
+    min-height: initial; /* 移除最小高度限制 */
+    overflow-y: visible; /* 禁用主栏的滚动条 */
   }
 }

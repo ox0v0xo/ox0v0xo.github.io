@@ -1,0 +1,84 @@
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.card-container {
+  backdrop-filter: blur(10px);
+  background: var(--color-night-bg-vice);
+  border-radius: 12px;
+  border: 1px solid #3a3a3a;
+  overflow: hidden;
+  padding: 1rem;
+  position: relative;
+  scroll-margin-top: 6rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.card-container::before {
+  background: linear-gradient(
+    45deg,
+    rgba(200, 150, 100, 0.1) 0%,
+    rgba(100, 150, 200, 0.05) 100%
+  );
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.card-container:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+.card-name {
+  color: var(--color-main);
+  margin-top: 0;
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card-container:hover .card-name {
+  color: var(--color-minor);
+  transition: all 0.3s ease;
+}
+
+.card-vice {
+  color: var(--color-gray);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-left: -0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card-tag {
+  background: var(--color-night-bg-vice);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 200, 200, 0.1);
+  color: var(--color-minor);
+  font-size: 0.9rem;
+  padding: 0.3rem 0.6rem;
+  transition: all 0.3s ease;
+}
+
+.card-tag:hover {
+  background: rgba(150, 150, 150, 0.1);
+  border-color: var(--color-minor);
+}
