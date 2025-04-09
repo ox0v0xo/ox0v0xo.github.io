@@ -4,19 +4,34 @@
   flex-direction: column;
   align-items: center; /* 子元素在水平方向上居中 */
   min-width: 250px;
-  overflow-y: overlay; /* 滚动条悬浮在内容上方 */
-  overflow-y: auto; /* 旧浏览器的回退方案方案 */
+  overflow-y: auto;
+  max-height: 100vh;
 }
 
 /* 头像 */
 .container-left-avatar {
   width: 100px;
   margin: 20px;
+  border-radius: 10%;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .container-left-avatar img {
   width: 100%;
   border-radius: 10%;
+  transition: transform 0.5s ease;
+}
+
+.container-left-avatar:hover img,
+.container-left-avatar:focus img,
+.container-left-avatar:active img {
+  transform: scale(1.1);
+}
+
+.container-left-avatar:hover,
+.container-left-avatar:focus,
+.container-left-avatar:active {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 /* 格言 */
@@ -36,4 +51,45 @@
 
 .container-left-nav ul {
   list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.container-left-nav li {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.container-left-nav a {
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.container-left-nav a:hover {
+  background-color: var(--color-night-bg-vice);
+  border-color: var(--color-minor);
+  transform: translateY(-2px);
+}
+
+.container-left-nav a.active {
+  background-color: rgba(0, 200, 200, 0.1);
+  border-color: var(--color-minor);
+  color: var(--color-minor);
+  font-weight: 500;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 650px) {
+  .container-left-nav a {
+    padding: 8px 12px;
+    font-size: 1rem;
+  }
 }

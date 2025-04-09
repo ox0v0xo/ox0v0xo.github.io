@@ -24,6 +24,13 @@
   box-sizing: inherit;
 }
 
+.container {
+  align-items: stretch; /* 垂直方向：子元素拉伸填满容器高度 */
+  display: flex; /* 启用 Flex 布局 */
+  height: 100%; /* 容器高度撑满父级 */
+  justify-content: space-between; /* 水平方向：两端对齐，子元素间距平均分配 */
+}
+
 body,
 html {
   background-color: var(--color-night-bg);
@@ -34,8 +41,18 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
-  margin: 0;
-  padding: 0;
+}
+
+html {
+  /* 防止滚动条出现导致布局抖动，但保持滚动条不可见 */
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* 隐藏整个浏览器的滚动条 */
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 a {
@@ -50,31 +67,45 @@ a.active {
   color: var(--color-minor);
 }
 
-.container {
-  align-items: stretch; /* 垂直方向：子元素拉伸填满容器高度 */
-  display: flex; /* 启用 Flex 布局 */
-  height: 100%; /* 容器高度撑满父级 */
-  justify-content: space-between; /* 水平方向：两端对齐，子元素间距平均分配 */
+/* 页面加载动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* 滚轮样式 */
-::-webkit-scrollbar {
+/* 滚轮样式 - 只应用于容器内的滚动条 */
+.container-left::-webkit-scrollbar,
+.container-main::-webkit-scrollbar,
+.container-right::-webkit-scrollbar {
   width: 8px;
 }
 
 /* 滚轮轨道 */
-::-webkit-scrollbar-track {
+.container-left::-webkit-scrollbar-track,
+.container-main::-webkit-scrollbar-track,
+.container-right::-webkit-scrollbar-track {
   background: var(--color-night-bg-vice);
   border-radius: 10px;
 }
 
 /* 滚轮滑块 */
-::-webkit-scrollbar-thumb {
+.container-left::-webkit-scrollbar-thumb,
+.container-main::-webkit-scrollbar-thumb,
+.container-right::-webkit-scrollbar-thumb {
   background: var(--color-main);
   border-radius: 10px;
   transition: background 0.5s ease;
 }
-::-webkit-scrollbar-thumb:hover {
+
+.container-left::-webkit-scrollbar-thumb:hover,
+.container-main::-webkit-scrollbar-thumb:hover,
+.container-right::-webkit-scrollbar-thumb:hover {
   background: var(--color-minor);
 }
 
