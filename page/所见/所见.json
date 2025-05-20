@@ -1,6 +1,30 @@
 {
   "Anime": [
     {
+      "NAME": "Another",
+      "RATE": 6,
+      "TIME": "2025-05-17T12:06",
+      "TYPE": "Anime"
+    },
+    {
+      "NAME": "笨拙之极的上野",
+      "RATE": 6,
+      "TIME": "2025-05-01T18:24",
+      "TYPE": "Anime"
+    },
+    {
+      "NAME": "我心里危险的东西 第二季",
+      "RATE": 7,
+      "TIME": "2025-04-26T14:06",
+      "TYPE": "Anime"
+    },
+    {
+      "NAME": "我心里危险的东西 第一季",
+      "RATE": 7,
+      "TIME": "2025-04-24T11:20",
+      "TYPE": "Anime"
+    },
+    {
       "NAME": "BanG Dream! Ave Mujica",
       "RATE": 5,
       "TIME": "2025-03-28T19:28",
@@ -577,6 +601,30 @@
     }
   ],
   "Game": [
+    {
+      "NAME": "Counter-Strike 2",
+      "RATE": 9,
+      "TIME": "2025-05-20T05:20",
+      "TYPE": "Game"
+    },
+    {
+      "NAME": "Dota 2",
+      "RATE": 8,
+      "TIME": "2025-05-20T05:20",
+      "TYPE": "Game"
+    },
+    {
+      "NAME": "Cats Hidden in Christmas",
+      "RATE": 6,
+      "TIME": "2025-05-19T01:17",
+      "TYPE": "Game"
+    },
+    {
+      "NAME": "100 Aliens Cats",
+      "RATE": 6,
+      "TIME": "2025-05-18T22:26",
+      "TYPE": "Game"
+    },
     {
       "NAME": "堕落千金—黑蔷薇与欲望之火",
       "RATE": 3,

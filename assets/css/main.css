@@ -83,7 +83,7 @@ a.active {
 .container-left::-webkit-scrollbar,
 .container-main::-webkit-scrollbar,
 .container-right::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 /* 滚轮轨道 */
@@ -138,5 +138,24 @@ a.active {
     height: auto; /* 自适应内容高度 */
     min-height: initial; /* 移除最小高度限制 */
     overflow-y: visible; /* 禁用主栏的滚动条 */
+  }
+
+  .container::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .container::-webkit-scrollbar-track {
+    background: var(--color-night-bg-vice);
+    border-radius: 8px;
+  }
+
+  .container::-webkit-scrollbar-thumb {
+    background: var(--color-main);
+    border-radius: 8px;
+    transition: background 0.5s ease;
+  }
+
+  .container::-webkit-scrollbar-thumb:hover {
+    background: var(--color-minor);
   }
 }
