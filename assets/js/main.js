@@ -1,4 +1,49 @@
-// 生成右栏导航栏
+// 主题界面
+function themeCheck() {
+  const storedTheme = localStorage.getItem("theme") || "night";
+  if (storedTheme === "light") {
+    document.body.classList.add("light-mode");
+    themeUpdate("light");
+  } else {
+    document.body.classList.remove("light-mode");
+    themeUpdate("night");
+  }
+}
+
+function themeUpdate(theme) {
+  const themeButton = document.getElementById("themeCirclet");
+  if (!themeButton) return;
+  if (theme === "light") {
+    themeButton.innerHTML = '<i class="fas fa-moon"></i>';
+    themeButton.title = "切换到暗色模式";
+  } else {
+    themeButton.innerHTML = '<i class="fas fa-sun"></i>';
+    themeButton.title = "切换到亮色模式";
+  }
+}
+
+function themeToggle() {
+  if (document.body.classList.contains("light-mode")) {
+    document.body.classList.remove("light-mode");
+    localStorage.setItem("theme", "night");
+    themeUpdate("night");
+  } else {
+    document.body.classList.add("light-mode");
+    localStorage.setItem("theme", "light");
+    themeUpdate("light");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  themeCheck();
+
+  const themeButton = document.getElementById("themeCirclet");
+  if (themeButton) {
+    themeButton.addEventListener("click", themeToggle);
+  }
+});
+
+// 生成右栏导航
 document.addEventListener("DOMContentLoaded", function () {
   const mainContainer = document.querySelector(".container-main");
   const navContainer = document.querySelector(".container-right-nav");

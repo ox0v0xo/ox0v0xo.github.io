@@ -19,7 +19,13 @@
 
     <meta name="author" content="ox0v0xo" />
     <meta name="keywords" content="ox0v0xo, 昔" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
     <script>
+      localStorage.setItem("theme", "night");
       window.location.href = "./page/welcome/index.html";
     </script>
   </head>
@@ -45,7 +51,16 @@
           </ul>
         </div>
         <!-- 按钮 -->
-        <div class="container-left-circlet"></div>
+        <div class="container-left-circlet">
+          <a href="javascript:void(0);" id="themeCirclet" title="切换主题"></a>
+          <a
+            href="https://github.com/ox0v0xo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
       </div>
       <!-- 主栏 -->
       <div class="container-main"></div>

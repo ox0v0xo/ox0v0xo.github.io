@@ -4,18 +4,29 @@
 @import url(./card.css);
 
 :root {
+  /* 主题色 - 固定不变 */
   --color-main: #e09685;
   --color-minor: #85cfe0;
   --color-gray: #aaaaaa;
+  --color-white: #fff;
 
   /* 夜间模式 */
-  --color-night-bg: #181818;
-  --color-night-bg-vice: rgba(45, 45, 45, 0.8);
-  --color-night-text: #f0f0f0;
+  --color-bg: #181818;
+  --color-bg-vice: rgba(45, 45, 45, 0.8);
+  --color-text: #f0f0f0;
+  --color-card: #2d2d2d;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-hover: rgba(45, 45, 45, 0.5);
+}
 
-  /* 日间模式 */
-  --color-day-bg: #eaeaea;
-  --color-day-text: #333333;
+/* 日间模式 */
+body.light-mode {
+  --color-bg: #f5f5f5;
+  --color-bg-vice: rgba(224, 150, 133, 0.1);
+  --color-text: #333333;
+  --color-card: #ffffff;
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-hover: rgba(224, 150, 133, 0.2);
 }
 
 *,
@@ -33,14 +44,19 @@
 
 body,
 html {
-  background-color: var(--color-night-bg);
-  color: var(--color-night-text);
+  background-color: var(--color-bg);
+  color: var(--color-text);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
   height: 100%;
+}
+
+body.light-mode {
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
 html {
@@ -90,7 +106,7 @@ a.active {
 .container-left::-webkit-scrollbar-track,
 .container-main::-webkit-scrollbar-track,
 .container-right::-webkit-scrollbar-track {
-  background: var(--color-night-bg-vice);
+  background: var(--color-bg-vice);
   border-radius: 10px;
 }
 
@@ -145,7 +161,7 @@ a.active {
   }
 
   .container::-webkit-scrollbar-track {
-    background: var(--color-night-bg-vice);
+    background: var(--color-bg-vice);
     border-radius: 8px;
   }
 

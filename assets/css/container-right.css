@@ -10,7 +10,7 @@
   margin: 20px;
   padding: 1px 10px; /* 第一个上下, 第二个左右 */
   border-radius: 8px;
-  background-color: var(--color-night-bg-vice);
+  background-color: var(--color-bg-vice);
   color: var(--color-gray);
 }
 

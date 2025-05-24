@@ -602,6 +602,24 @@
   ],
   "Game": [
     {
+      "NAME": "雀魂麻將(MahjongSoul)",
+      "RATE": 6,
+      "TIME": "2025-05-22T05:22",
+      "TYPE": "Game"
+    },
+    {
+      "NAME": "The Mr. Rabbit Magic Show",
+      "RATE": 6,
+      "TIME": "2025-05-21T14:24",
+      "TYPE": "Game"
+    },
+    {
+      "NAME": "饥荒联机版",
+      "RATE": 7,
+      "TIME": "2025-05-21T05:21",
+      "TYPE": "Game"
+    },
+    {
       "NAME": "Counter-Strike 2",
       "RATE": 9,
       "TIME": "2025-05-20T05:20",
@@ -635,6 +653,12 @@
       "NAME": "NEKOPARA Vol. 3",
       "RATE": 6,
       "TIME": "2025-01-24T21:27",
+      "TYPE": "Game"
+    },
+    {
+      "NAME": "Mirror 2: Project X",
+      "RATE": 0,
+      "TIME": "2025-01-24T16:41",
       "TYPE": "Game"
     },
     {

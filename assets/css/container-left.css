@@ -26,12 +26,7 @@
 .container-left-avatar:focus img,
 .container-left-avatar:active img {
   transform: scale(1.1);
-}
-
-.container-left-avatar:hover,
-.container-left-avatar:focus,
-.container-left-avatar:active {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px var(--color-minor);
 }
 
 /* 格言 */
@@ -74,16 +69,43 @@
 }
 
 .container-left-nav a:hover {
-  background-color: var(--color-night-bg-vice);
+  background-color: var(--color-bg-vice);
   border-color: var(--color-minor);
   transform: translateY(-2px);
 }
 
-.container-left-nav a.active {
-  background-color: rgba(0, 200, 200, 0.1);
-  border-color: var(--color-minor);
-  color: var(--color-minor);
-  font-weight: 500;
+body.light-mode .container-left-nav a:hover {
+  background-color: var(--color-light-bg-vice);
+}
+
+/* 按钮 */
+.container-left-circlet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding: 10px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.container-left-circlet a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-hover);
+  color: var(--color-gray);
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.container-left-circlet a:hover {
+  background-color: var(--color-main);
+  transform: translateY(-3px);
+  color: var(--color-white);
 }
 
 /* 响应式设计 */
