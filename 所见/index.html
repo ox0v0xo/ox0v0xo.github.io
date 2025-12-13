@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>所见</title>
+    <meta property="og:description" content="小昔的博客" />
+    <link rel="icon" href="../assets/img/178242985.png" />
+    <link rel="stylesheet" href="./index.css" />
+    <script defer src="./index.js"></script>
+  </head>
+
+  <body>
+    <script>
+      fetch("所见.json")
+        .then((r) => r.text())
+        .then((text) => {
+          document.body.innerHTML = "<pre>" + text + "</pre>";
+        });
+    </script>
+  </body>
+</html>
